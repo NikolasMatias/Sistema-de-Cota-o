@@ -1,0 +1,70 @@
+.menu-row {
+    background-color: #89cff0;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.menu-row .menu-col {
+
+}
+
+.list-currency-row {
+    margin-top: 30px;
+}
+
+.list-currency-row .list-currency-title {
+    background-color: #89cff0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.list-currency-row .list-currency-title .list-currency-title-element {
+    border: 1px solid #ffffff;
+}
+
+.list-currency-row .list-currency-content {
+    font-size: 1.2em;
+    background-color: rgba(60, 60, 60, .1);
+    text-align: center;
+}
+
+.list-currency-row .list-currency-content .list-currency-content {
+    border: 1px solid #ffffff;
+}
+
+.graphic-row .graphic-filters .graphic-filters-dates {
+    margin-top: 10px;
+}
+
+.v-select {
+    font-family: "Confortaa", sans-serif !important;
+}
+
+.v-select .dropdown-toggle {
+    border-radius: 0 !important;
+}
+
+.v-select .selected-tag {
+    height: 34px;
+    border-radius: 0 !important;
+}
+
+.v-select .selected-tag + input {
+    width: 1em !important;
+}
+
+.v-select input:focus {
+    width: 100% !important;
+}
+
+.v-select input:focus + .open-indicator:before {
+    border-color: #89cff0 !important;
+}
+
+.v-select input + .open-indicator:before {
+    border-color: #89cff0 !important;
+}
+
+.v-select .disabled .open-indicator:before {
+    border-color: rgba(60, 60, 60, 0.5) !important;
+}

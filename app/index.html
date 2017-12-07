@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Cotacao Moeda</title>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="../assets/css/index.css">
+    </head>
+    <body>
+    <div class="currency" id="currency">
+        <div class="container">
+            <div class="row menu-row">
+                <div class="col-12 text-center menu-col">
+                    <h1>Cotação das moedas</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-2">
+                    <label>Moeda:   </label>
+                </div>
+                <div class="col-6 col-md-3">
+                    <v-select v-model="currentCurrency" :options="currencies"
+                              placeholder="Moeda"></v-select>
+                </div>
+                <div class="col-6 offset-md-2 col-md-2">
+                    <label>Filtro: </label>
+                </div>
+                <div class="col-6 col-md-3">
+                    <v-select v-model="filterCurrency" :options="currencies"
+                              placeholder="Filtro"></v-select>
+                </div>
+            </div>
+            <div class="row list-currency-row">
+                <div class="col-12 list-currency-title">
+                    <div class="row">
+                        <div class="col-6 list-currency-title-element">
+                            <h2>Moeda</h2>
+                        </div>
+                        <div class="col-6 list-currency-title-e lement">
+                            <h2>Valor</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 list-currency-content">
+                    <div class="row" v-for="(result, key) in resultCurrency.rates">
+                        <div class="col-6 list-currency-content">
+                            {{key}}
+                        </div>
+                        <div class="col-6 list-currency-content">
+                            {{result}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 list-currency-content" v-if="isEmpty(resultCurrency.rates)">
+                            <p>Nenhum valor encontrado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row graphic-row">
+                <div class="col-12 graphic-title">
+                    <h3>Conversão de {{currentCurrency}} para {{currentCurrencyGraphic}}</h3>
+                </div>
+                <div class="col-12 graphic-filters">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <label>Conversão: </label>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <v-select v-model="currentCurrencyGraphic" :options="currencies"
+                                      placeholder="Conversão"></v-select>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <label>Periodo: </label>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <v-select v-model="currentPeriod" :options="periods"
+                                      placeholder="Conversão"></v-select>
+                        </div>
+                        <div class="col-6 offset-md-6 col-md-3 graphic-filters-dates">
+                            <label v-show="currentPeriod">Datas: </label>
+                        </div>
+                        <div class="col-6 col-md-3 graphic-filters-dates">
+                            <v-select v-model="currentFilterPeriod" :options="filterPeriods"
+                                      placeholder="Datas" v-show="currentPeriod"></v-select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 graphic-content" id="graphic-content">
+                    <canvas id="currencyGraphic" width="500" height="200"></canvas>
+                </div>
+            </div>
+            <div class="row footer">
+                <div class="col-12 text-center">
+                    <p>Fixer is an open-source, simple, and lightweight API for current and historical foreign exchange (forex) rates published by the European Central Bank.</p>
+                </div>
+                <div class="col-12 text-center">
+                    <p>Desenvolvido por Nikolas Matias</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts do projeto -->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+
+    <script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="../assets/vendor/axios/axios.min.js"></script>
+
+    <script src="../assets/vendor/moment/moment.min.js"></script>
+
+    <!-- <script src="../assets/vendor/chartjs/chartjs.min.js"></script>-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <script src="../assets/vendor/vue/vue-select.min.js"></script>
+
+    <!-- <script src="../assets/vendor/vue/vue2.js"></script> -->
+
+    <script src="../assets/js/index.js"></script>
+    </body>
+</html>
